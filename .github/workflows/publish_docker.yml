@@ -18,7 +18,7 @@ jobs:
       - name: Checkout Main Repo
         uses: actions/checkout@v4
         with:
-          repository: Feliksas/golang-deb-builder
+          repository: Softlabs22/golang-deb-builder
           ref: ${{ env.GITHUB_REF }}
           fetch-depth: 0
 
@@ -52,6 +52,3 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            BACKEND_VERSION=${{ env.GITHUB_REF_NAME }}
-            FRONTEND_VERSION=${{ env.GITHUB_REF_NAME }}
